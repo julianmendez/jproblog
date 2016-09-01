@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>JProbLog by julianmendez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">JProbLog</h1>
+      <h2 class="project-tagline">Java adapter for ProbLog</h2>
+      <a href="https://github.com/julianmendez/jproblog" class="btn">View on GitHub</a>
+      <a href="https://github.com/julianmendez/jproblog/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/julianmendez/jproblog/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="jproblog" class="anchor" href="#jproblog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://julianmendez.github.io/jproblog">JProbLog</a>
+</h1>
+
+<p><a href="https://travis-ci.org/julianmendez/jproblog"><img src="https://travis-ci.org/julianmendez/jproblog.png?branch=master" alt="Build Status"></a>
+<a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22de.tu-dresden.inf.lat.jproblog%22"><img src="https://maven-badges.herokuapp.com/maven-central/de.tu-dresden.inf.lat.jproblog/jproblog/badge.svg" alt="Maven Central"></a></p>
+
+<p><strong>JProbLog</strong> is a <a href="http://www.oracle.com/technetwork/java/index.html">Java</a> adapter for <a href="https://dtai.cs.kuleuven.be/problog/">ProbLog</a>.</p>
+
+<h2>
+<a id="download" class="anchor" href="#download" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Download</h2>
+
+<ul>
+<li><a href="https://sourceforge.net/projects/latitude/files/jproblog/0.1.0/jproblog-0.1.0.jar/download">library JAR file</a></li>
+<li><a href="https://repo1.maven.org/maven2/de/tu-dresden/inf/lat/jproblog/">The Central Repository</a></li>
+<li>as dependency:</li>
+</ul>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span>&gt;
+  &lt;<span class="pl-ent">groupId</span>&gt;de.tu-dresden.inf.lat.jproblog&lt;/<span class="pl-ent">groupId</span>&gt;
+  &lt;<span class="pl-ent">artifactId</span>&gt;jproblog&lt;/<span class="pl-ent">artifactId</span>&gt;
+  &lt;<span class="pl-ent">version</span>&gt;0.1.0&lt;/<span class="pl-ent">version</span>&gt;
+&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h2>
+
+<p><a href="http://lat.inf.tu-dresden.de/%7Emendez">Julian Mendez</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>This software is distributed under the <a href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache License Version 2.0</a>.</p>
+
+<h2>
+<a id="release-notes" class="anchor" href="#release-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release notes</h2>
+
+<p>See <a href="https://github.com/julianmendez/jproblog/blob/master/RELEASE-NOTES.md">release notes</a>.</p>
+
+<h2>
+<a id="source-code" class="anchor" href="#source-code" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Source code</h2>
+
+<p>To checkout and compile the project, use:</p>
+
+<pre><code>$ git clone https://github.com/julianmendez/jproblog.git
+$ cd jproblog
+$ mvn clean install
+</code></pre>
+
+<p>To compile the project offline, first download the dependencies:</p>
+
+<pre><code>$ mvn dependency:go-offline
+</code></pre>
+
+<p>and once offline, use:</p>
+
+<pre><code>$ mvn --offline clean install
+</code></pre>
+
+<p>The bundles uploaded to <a href="https://oss.sonatype.org/">Sonatype</a> are created with:</p>
+
+<pre><code>$ mvn clean install -DperformRelease=true
+</code></pre>
+
+<p>and then:</p>
+
+<pre><code>$ cd jproblog/target
+$ jar -cf bundle.jar jproblog-*
+</code></pre>
+
+<p>The version number is updated with:</p>
+
+<pre><code>$ mvn versions:set -DnewVersion=NEW_VERSION
+</code></pre>
+
+<p>where <em>NEW_VERSION</em> is the new version.</p>
+
+<h2>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h2>
+
+<p>In case you need more information, please contact <a href="https://github.com/julianmendez" class="user-mention">@julianmendez</a> .</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/julianmendez/jproblog">JProbLog</a> is maintained by <a href="https://github.com/julianmendez">julianmendez</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
