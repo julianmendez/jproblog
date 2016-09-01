@@ -102,6 +102,8 @@
 
 	<description>Java interface for ProbLog.</description>
 
+	<url>https://github.com/julianmendez/jproblog</url>
+
 	<inceptionYear>2016</inceptionYear>
 
 	<licenses>
@@ -127,6 +129,12 @@
 		</developer>
 
 	</developers>
+
+	<scm>
+		<url>https://github.com/julianmendez/jproblog.git</url>
+		<connection>scm:git:https://github.com/julianmendez/jproblog.git</connection>
+		<developerConnection>scm:git:https://github.com/julianmendez/jproblog.git</developerConnection>
+	</scm>
 
 </project>
 
