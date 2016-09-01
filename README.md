@@ -1,4 +1,4 @@
-# [JProbLog](https://julianmendez.github.io/jproblog)
+# [JProbLog](https://julianmendez.github.io/jproblog/)
 
 [![Build Status](https://travis-ci.org/julianmendez/jproblog.png?branch=master)](https://travis-ci.org/julianmendez/jproblog)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.tu-dresden.inf.lat.jproblog/jproblog/badge.svg)](http://search.maven.org/#search|ga|1|g%3A%22de.tu-dresden.inf.lat.jproblog%22)
