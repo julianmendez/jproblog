@@ -21,12 +21,6 @@
 		<dependencies>
 
 			<dependency>
-				<groupId>org.python</groupId>
-				<artifactId>jython</artifactId>
-				<version>2.7.0</version>
-			</dependency>
-
-			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.12</version>
