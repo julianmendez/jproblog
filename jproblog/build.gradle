@@ -1,0 +1,43 @@
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'de.tu-dresden.inf.lat.jproblog'
+version = '0.1.0'
+
+description = """JProbLog"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildDir = 'target'
+libsDirName = '.'
+
+
+
+repositories {
+    mavenCentral()
+}
+
+ 
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'JProbLog' ,
+                   'Implementation-Version': version ,
+                   'Specification-Vendor': 'Chair of Automata Theory - TU Dresden' ,
+                   'Specification-Title': 'JProbLog' ,
+                   'Implementation-Vendor-Id': 'de.tu-dresden.inf.lat.jproblog' ,
+                   'Implementation-Vendor': 'Chair of Automata Theory - TU Dresden' ,
+                   'Main-Class': 'de.tudresden.inf.lat.jproblog.JProblog' ,
+                   'Specification-Version': '0.1' ,
+                   'Implementation-URL': 'https://github.com/julianmendez/jproblog'
+
+    }
+}
+
+
