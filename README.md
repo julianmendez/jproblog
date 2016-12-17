@@ -51,6 +51,7 @@ To compile the project offline, first download the dependencies:
 ```
 $ mvn dependency:go-offline
 ```
+
 and once offline, use:
 
 ```
@@ -62,6 +63,7 @@ The bundles uploaded to [Sonatype](https://oss.sonatype.org/) are created with:
 ```
 $ mvn clean install -DperformRelease=true
 ```
+
 and then:
 
 ```
@@ -74,6 +76,7 @@ The version number is updated with:
 ```
 $ mvn versions:set -DnewVersion=NEW_VERSION
 ```
+
 where *NEW_VERSION* is the new version.
 
 
