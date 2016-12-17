@@ -7,9 +7,11 @@
 
 
 ## Download
+
 * [library JAR file](https://sourceforge.net/projects/latitude/files/jproblog/0.1.0/jproblog-0.1.0.jar/download)
 * [The Central Repository](https://repo1.maven.org/maven2/de/tu-dresden/inf/lat/jproblog/)
 * as dependency:
+
 ```xml
 <dependency>
   <groupId>de.tu-dresden.inf.lat.jproblog</groupId>
@@ -20,6 +22,7 @@
 
 
 ## Author
+
 [Julian Mendez](http://lat.inf.tu-dresden.de/~mendez)
 
 
@@ -44,25 +47,30 @@ $ mvn clean install
 ```
 
 To compile the project offline, first download the dependencies:
+
 ```
 $ mvn dependency:go-offline
 ```
 and once offline, use:
+
 ```
 $ mvn --offline clean install
 ```
 
 The bundles uploaded to [Sonatype](https://oss.sonatype.org/) are created with:
+
 ```
 $ mvn clean install -DperformRelease=true
 ```
 and then:
+
 ```
 $ cd jproblog/target
 $ jar -cf bundle.jar jproblog-*
 ```
 
 The version number is updated with:
+
 ```
 $ mvn versions:set -DnewVersion=NEW_VERSION
 ```
