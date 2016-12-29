@@ -46,12 +46,12 @@ public class JProblog implements Function<String, String> {
 		return this.processor.apply(input);
 	}
 
-	String read(BufferedReader reader) throws IOException {
+	String read(BufferedReader reader) {
 		StringBuilder sb = new StringBuilder();
-		for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+		reader.lines().forEach(line -> {
 			sb.append(line);
 			sb.append(NEW_LINE);
-		}
+		});
 		return sb.toString();
 	}
 

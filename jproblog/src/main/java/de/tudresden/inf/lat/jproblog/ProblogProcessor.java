@@ -302,17 +302,15 @@ public class ProblogProcessor implements Function<String, String> {
 	 * @param input
 	 *            reader
 	 * @return string with the content of a given reader
-	 * @throws IOException
-	 *             if something goes wrong with I/O
 	 */
-	String show(Reader input) throws IOException {
-		StringBuilder sb = new StringBuilder();
+	String show(Reader input) {
 		Objects.requireNonNull(input);
+		StringBuilder sb = new StringBuilder();
 		BufferedReader reader = new BufferedReader(input);
-		for (String line = reader.readLine(); Objects.nonNull(line); line = reader.readLine()) {
+		reader.lines().forEach(line -> {
 			sb.append(line);
 			sb.append(NEW_LINE_CHAR);
-		}
+		});
 		return sb.toString();
 	}
 
