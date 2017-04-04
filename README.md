@@ -1,9 +1,9 @@
 # [JProbLog](https://julianmendez.github.io/jproblog/)
 
 [![Build Status](https://travis-ci.org/julianmendez/jproblog.png?branch=master)](https://travis-ci.org/julianmendez/jproblog)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.tu-dresden.inf.lat.jproblog/jproblog/badge.svg)](http://search.maven.org/#search|ga|1|g%3A%22de.tu-dresden.inf.lat.jproblog%22)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.tu-dresden.inf.lat.jproblog/jproblog/badge.svg)](https://search.maven.org/#search|ga|1|g%3A%22de.tu-dresden.inf.lat.jproblog%22)
 
-**JProbLog** is a [Java](http://www.oracle.com/technetwork/java/index.html) adapter for [ProbLog](https://dtai.cs.kuleuven.be/problog/).
+**JProbLog** is a [Java](https://www.oracle.com/technetwork/java/index.html) adapter for [ProbLog](https://dtai.cs.kuleuven.be/problog/).
 
 
 ## Download
@@ -23,12 +23,12 @@
 
 ## Author
 
-[Julian Mendez](http://lat.inf.tu-dresden.de/~mendez)
+[Julian Mendez](https://lat.inf.tu-dresden.de/~mendez)
 
 
 ## License
 
-This software is distributed under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
+This software is distributed under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 
 ## Release notes

@@ -31,7 +31,7 @@ public class ProblogProcessor implements Function<String, String> {
 	public static final String JYTHON_ARTIFACT_ID = "jython-standalone";
 	public static final String JYTHON_VERSION = "2.7.0";
 
-	public static final String MAVEN_REPOSITORY = "http://repo1.maven.org/maven2";
+	public static final String MAVEN_REPOSITORY = "https://repo1.maven.org/maven2";
 
 	static final char SPACE_CHAR = ' ';
 	static final char NEW_LINE_CHAR = '\n';
