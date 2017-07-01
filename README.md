@@ -33,7 +33,7 @@ This software is distributed under the [Apache License Version 2.0](https://www.
 
 ## Release notes
 
-See [release notes](https://github.com/julianmendez/jproblog/blob/master/RELEASE-NOTES.md).
+See [release notes](https://julianmendez.github.io/jproblog/RELEASE-NOTES.html).
 
 
 ## Source code
