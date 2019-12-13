@@ -1,4 +1,5 @@
 
+
 ## Release notes
 
 | version | release date | Java | ProbLog | Python     | Jython  |
@@ -16,4 +17,5 @@
 $ mvn clean install
 ```
 * release: `jproblog/target/jproblog-0.1.0.jar`
+
 
