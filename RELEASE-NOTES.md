@@ -1,5 +1,6 @@
 
 
+
 ## Release notes
 
 | version | release date | Java | ProbLog | Python     | Jython  |
