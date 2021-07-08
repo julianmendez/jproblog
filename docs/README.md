@@ -1,6 +1,6 @@
 # [JProbLog](https://julianmendez.github.io/jproblog/)
 
-[![build](https://travis-ci.org/julianmendez/jproblog.png?branch=master)](https://travis-ci.org/julianmendez/jproblog)
+[![build](https://github.com/julianmendez/jproblog/workflows/Java%20CI/badge.svg)](https://github.com/julianmendez/jproblog/actions)
 [![maven central](https://maven-badges.herokuapp.com/maven-central/de.tu-dresden.inf.lat.jproblog/jproblog/badge.svg)](https://search.maven.org/#search|ga|1|g%3A%22de.tu-dresden.inf.lat.jproblog%22)
 [![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
