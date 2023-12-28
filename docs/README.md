@@ -24,7 +24,7 @@
 
 ## Author
 
-[Julian Mendez](https://julianmendez.github.io)
+[Julian Alfredo Mendez](https://julianmendez.github.io)
 
 
 ## License
@@ -39,7 +39,7 @@ See [release notes](https://julianmendez.github.io/jproblog/RELEASE-NOTES.html).
 
 ## Source code
 
-To checkout and compile the project, use:
+To check out and compile the project, use:
 
 ```
 $ git clone https://github.com/julianmendez/jproblog.git
