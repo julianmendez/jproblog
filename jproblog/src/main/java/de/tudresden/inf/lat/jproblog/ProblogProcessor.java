@@ -29,7 +29,7 @@ public class ProblogProcessor implements Function<String, String> {
 
 	public static final String JYTHON_GROUP_ID = "org.python";
 	public static final String JYTHON_ARTIFACT_ID = "jython-standalone";
-	public static final String JYTHON_VERSION = "2.7.0";
+	public static final String JYTHON_VERSION = "2.7.3";
 
 	public static final String MAVEN_REPOSITORY = "https://repo1.maven.org/maven2";
 
@@ -46,7 +46,7 @@ public class ProblogProcessor implements Function<String, String> {
 					+ JYTHON_ARTIFACT_ID + SLASH_CHAR + JYTHON_VERSION + SLASH_CHAR + JYTHON_JAR);
 
 	public static final URI DEFAULT_PROBLOG_DOWNLOAD_URI = URI
-			.create("https://bitbucket.org/problog/problog/get/master.zip");
+			.create("https://github.com/ML-KULeuven/problog/archive/refs/heads/master.zip");
 
 	static final String FILE_SEPARATOR = System.getProperty("file.separator");
 
@@ -75,7 +75,7 @@ public class ProblogProcessor implements Function<String, String> {
 	static final String PYTHON_COMMAND = "python";
 	static final String PYTHON_VERSION_OPTION = "-V";
 	static final String PYTHON_VERSION_2_7 = "Python 2.7";
-	static final String PYTHON_VERSION_3_2 = "Python 3.2";
+	static final String PYTHON_VERSION_3 = "Python 3";
 	static final String JAVA_COMMAND = "java";
 	static final String JAVA_JAR_OPTION = "-jar";
 	static final String JYTHON_COMMAND = JAVA_COMMAND + SPACE_CHAR + JAVA_JAR_OPTION + SPACE_CHAR + DEFAULT_JYTHON_FILE;
@@ -114,7 +114,7 @@ public class ProblogProcessor implements Function<String, String> {
 			process.waitFor();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
 			String line = reader.readLine();
-			return (line != null && (line.startsWith(PYTHON_VERSION_2_7) || line.startsWith(PYTHON_VERSION_3_2)));
+			return (line != null && (line.startsWith(PYTHON_VERSION_2_7) || line.startsWith(PYTHON_VERSION_3)));
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);
 		} catch (InterruptedException e) {
