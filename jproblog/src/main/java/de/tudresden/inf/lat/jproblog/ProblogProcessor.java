@@ -88,18 +88,18 @@ public class ProblogProcessor implements Function<String, String> {
 	}
 
 	boolean isPythonInstalled() {
+		boolean ret = false;
 		try {
 			ProcessBuilder builder = new ProcessBuilder(PYTHON_COMMAND, PYTHON_VERSION_OPTION);
 			Process process = builder.start();
 			process.waitFor();
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 			String line = reader.readLine();
-			return (line != null && line.startsWith(PYTHON_VERSION_3));
+			ret = (line != null && line.startsWith(PYTHON_VERSION_3));
 		} catch (IOException e) {
-			throw new UncheckedIOException(e);
 		} catch (InterruptedException e) {
-			throw new RuntimeException(e);
 		}
+		return ret;
 	}
 
 	String flattenArguments(String[] args) {
