@@ -17,34 +17,17 @@ import java.util.zip.ZipEntry;
 
 /**
  * An object of this class manages the installation and execution of ProbLog.
- * The processor detects whether a valid version of Python is already installed.
+ * The processor detects whether Python is already installed.
  * If Python is installed, the processor is in 'Python mode' and it uses Python
- * to run ProbLog. Otherwise, it downloads Jython from the Central Repository,
- * and uses Jython to run ProbLog.
+ * to run ProbLog.
  * 
  * @author Julian Mendez
  *
  */
 public class ProblogProcessor implements Function<String, String> {
 
-	public static final String JYTHON_GROUP_ID = "org.python";
-	public static final String JYTHON_ARTIFACT_ID = "jython-standalone";
-	public static final String JYTHON_VERSION = "2.7.3";
-
-	public static final String MAVEN_REPOSITORY = "https://repo1.maven.org/maven2";
-
 	static final char SPACE_CHAR = ' ';
 	static final char NEW_LINE_CHAR = '\n';
-	static final String TAB_AND_COLON = "\t    : ";
-	static final char HYPHEN_CHAR = '-';
-	static final char SLASH_CHAR = '/';
-
-	public static final String JYTHON_JAR = "jython-standalone" + HYPHEN_CHAR + JYTHON_VERSION + ".jar";
-
-	public static final URI DEFAULT_JYTHON_DOWNLOAD_URI = URI
-			.create(MAVEN_REPOSITORY + SLASH_CHAR + JYTHON_GROUP_ID.replace('.', SLASH_CHAR) + SLASH_CHAR
-					+ JYTHON_ARTIFACT_ID + SLASH_CHAR + JYTHON_VERSION + SLASH_CHAR + JYTHON_JAR);
-
 	public static final URI DEFAULT_PROBLOG_DOWNLOAD_URI = URI
 			.create("https://github.com/ML-KULeuven/problog/archive/refs/heads/master.zip");
 
@@ -64,22 +47,15 @@ public class ProblogProcessor implements Function<String, String> {
 	static final String DEFAULT_PROBLOG_INSTALLATION_DIRECTORY = JPROBLOG_WORKING_DIRECTORY;
 
 	static final String DEFAULT_PROBLOG_ZIP_FILE = JPROBLOG_WORKING_DIRECTORY + FILE_SEPARATOR
-			+ "problog-2.1-SNAPSHOT.zip";
-
-	static final String DEFAULT_JYTHON_FILE = JPROBLOG_WORKING_DIRECTORY + FILE_SEPARATOR + JYTHON_JAR;
+			+ "problog-master.zip";
 
 	static final String PROBLOG_CLI = "problog-cli.py";
 	static final String PROBLOG_INSTALL_COMMAND = "install";
 	static final String PROBLOG_OUTPUT_OPTION = "-o";
 
-	static final String PYTHON_COMMAND = "python";
+	static final String PYTHON_COMMAND = "python3";
 	static final String PYTHON_VERSION_OPTION = "-V";
-	static final String PYTHON_VERSION_2_7 = "Python 2.7";
 	static final String PYTHON_VERSION_3 = "Python 3";
-	static final String JAVA_COMMAND = "java";
-	static final String JAVA_JAR_OPTION = "-jar";
-	static final String JYTHON_COMMAND = JAVA_COMMAND + SPACE_CHAR + JAVA_JAR_OPTION + SPACE_CHAR + DEFAULT_JYTHON_FILE;
-
 	static final String PROBLOG_EXEC_WINDOWS = "problog" + FILE_SEPARATOR + "bin" + FILE_SEPARATOR + "windows"
 			+ FILE_SEPARATOR + "dsharp.exe";
 	static final String PROBLOG_EXEC_DARWIN = "problog" + FILE_SEPARATOR + "bin" + FILE_SEPARATOR + "darwin"
@@ -92,19 +68,23 @@ public class ProblogProcessor implements Function<String, String> {
 	public static final int KNOWN_ISSUE_MAX_RETRIES = 5;
 	public static final String KNOWN_ISSUE_MESSAGE = "DSharpError: DSharp has encountered an error. This is a known issue. See KNOWN_ISSUES for details on how to resolve this problem.";
 
+	public static final String PYTHON_NOT_INSTALLED_MESSAGE = PYTHON_VERSION_3 + " is not installed or not reachable.";
 	private String problogDirectory = null;
 	private Object problogInstallationMonitor = new Object();
-	private final boolean pythonMode;
 
 	/**
 	 * Constructs a new ProbLog processor
 	 */
 	public ProblogProcessor() {
-		this.pythonMode = isPythonInstalled();
+		if (!isPythonInstalled()) {
+			throw new RuntimeException(PYTHON_NOT_INSTALLED_MESSAGE);
+		}
 	}
 
-	ProblogProcessor(boolean pythonMode) {
-		this.pythonMode = pythonMode;
+	ProblogProcessor(boolean testingMode) {
+		if (!testingMode && !isPythonInstalled()) {
+			throw new RuntimeException(PYTHON_NOT_INSTALLED_MESSAGE);
+		}
 	}
 
 	boolean isPythonInstalled() {
@@ -114,22 +94,12 @@ public class ProblogProcessor implements Function<String, String> {
 			process.waitFor();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
 			String line = reader.readLine();
-			return (line != null && (line.startsWith(PYTHON_VERSION_2_7) || line.startsWith(PYTHON_VERSION_3)));
+			return (line != null && line.startsWith(PYTHON_VERSION_3));
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
-	}
-
-	/**
-	 * Tells whether this processor is in 'Python mode', i.e. it uses Python
-	 * instead of Jython.
-	 * 
-	 * @return <code>true</code> if this processor is in Python mode
-	 */
-	public boolean getPythonMode() {
-		return this.pythonMode;
 	}
 
 	String flattenArguments(String[] args) {
@@ -141,7 +111,7 @@ public class ProblogProcessor implements Function<String, String> {
 		return sb.toString();
 	}
 
-	int runPython(String[] args) {
+	int run(String[] args) {
 		try {
 			String commandLine = PYTHON_COMMAND + flattenArguments(args);
 			Runtime runtime = Runtime.getRuntime();
@@ -151,27 +121,6 @@ public class ProblogProcessor implements Function<String, String> {
 			throw new UncheckedIOException(e);
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
-		}
-	}
-
-	int runJython(String[] args) {
-		try {
-			String commandLine = JYTHON_COMMAND + flattenArguments(args);
-			Runtime runtime = Runtime.getRuntime();
-			Process process = runtime.exec(commandLine);
-			return process.waitFor();
-		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		} catch (InterruptedException e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	int run(String args[]) {
-		if (this.pythonMode) {
-			return runPython(args);
-		} else {
-			return runJython(args);
 		}
 	}
 
@@ -241,12 +190,6 @@ public class ProblogProcessor implements Function<String, String> {
 	 *             if the execution was interrupted
 	 */
 	public void install() throws IOException, InterruptedException {
-		if (!this.pythonMode) {
-			DownloadManager jythonDownloadManager = new DownloadManager(DEFAULT_JYTHON_DOWNLOAD_URI,
-					DEFAULT_JYTHON_FILE);
-			jythonDownloadManager.downloadIfNecessary();
-		}
-
 		DownloadManager problogDownloadManager = new DownloadManager(DEFAULT_PROBLOG_DOWNLOAD_URI,
 				DEFAULT_PROBLOG_ZIP_FILE);
 		problogDownloadManager.downloadIfNecessary();
