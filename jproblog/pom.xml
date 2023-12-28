@@ -10,6 +10,15 @@
 	<version>0.2.0</version>
 	<packaging>jar</packaging>
 
+	<dependencies>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+		</dependency>
+
+	</dependencies>
+
 	<parent>
 		<groupId>de.tu-dresden.inf.lat</groupId>
 		<artifactId>lat-parent</artifactId>
