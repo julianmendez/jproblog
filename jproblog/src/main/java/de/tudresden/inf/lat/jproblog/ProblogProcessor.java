@@ -271,13 +271,15 @@ public class ProblogProcessor implements Function<String, String> {
 
 	String tryExecution() throws IOException {
 		File outputFile = new File(DEFAULT_OUTPUT_FILE_FROM_PROBLOG);
-		outputFile.delete();
 		execute(DEFAULT_OUTPUT_FILE_FROM_PROBLOG);
+		final String ret;
 		if (outputFile.exists()) {
-			return show(new InputStreamReader(new FileInputStream(outputFile)));
+			ret = show(new InputStreamReader(new FileInputStream(outputFile)));
 		} else {
-			return NO_RESULTS;
+			ret = NO_RESULTS;
 		}
+		outputFile.delete();
+		return ret;
 	}
 
 	@Override
