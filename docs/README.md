@@ -5,6 +5,9 @@
 [![build](https://github.com/julianmendez/jproblog/workflows/Java%20CI/badge.svg)][build-status]
 
 **JProbLog** is a [Java][java] adapter for [ProbLog][problog].
+It requires [Python][python] 3 installed.
+It downloads a [ProbLog release][problog-repository] the first time it is executed, and
+caches that file in a local directory.
 
 
 ## Download
@@ -95,5 +98,7 @@ In case you need more information, please contact [julianmendez][author].
 [sonatype]: https://oss.sonatype.org
 [java]: https://www.oracle.com/java/technologies/
 [problog]: https://dtai.cs.kuleuven.be/problog/
+[problog-repository]: https://github.com/ML-KULeuven/problog
+[python]: https://www.python.org
 
 
