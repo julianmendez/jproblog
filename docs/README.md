@@ -1,7 +1,7 @@
 # [JProbLog](https://julianmendez.github.io/jproblog/)
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)][license]
-[![Maven Central](https://img.shields.io/maven-central/v/de.tu-dresden.inf.lat.jproblog/jproblog/badge.svg?label=Maven%20Central)][maven-central]
+[![Maven Central](https://img.shields.io/maven-central/v/de.tu-dresden.inf.lat.jproblog/jproblog.svg?label=Maven%20Central)][maven-central]
 [![build](https://github.com/julianmendez/jproblog/workflows/Java%20CI/badge.svg)][build-status]
 
 **JProbLog** is a [Java][java] adapter for [ProbLog][problog].
