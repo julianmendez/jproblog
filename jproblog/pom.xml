@@ -22,7 +22,7 @@
 	<parent>
 		<groupId>de.tu-dresden.inf.lat</groupId>
 		<artifactId>lat-parent</artifactId>
-		<version>0.1.6</version>
+		<version>0.1.7</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -44,7 +44,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>3.2.1</version>
 			</plugin>
 
 			<plugin>
