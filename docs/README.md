@@ -1,16 +1,16 @@
 # [JProbLog](https://julianmendez.github.io/jproblog/)
 
-[![build](https://github.com/julianmendez/jproblog/workflows/Java%20CI/badge.svg)](https://github.com/julianmendez/jproblog/actions)
-[![maven central](https://maven-badges.herokuapp.com/maven-central/de.tu-dresden.inf.lat.jproblog/jproblog/badge.svg)](https://search.maven.org/#search|ga|1|g%3A%22de.tu-dresden.inf.lat.jproblog%22)
-[![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)][license]
+[![Maven Central](https://img.shields.io/maven-central/v/de.tu-dresden.inf.lat.jproblog/jproblog/badge.svg?label=Maven%20Central)][maven-central]
+[![build](https://github.com/julianmendez/jproblog/workflows/Java%20CI/badge.svg)][build-status]
 
-**JProbLog** is a [Java](https://www.oracle.com/technetwork/java/index.html) adapter for [ProbLog](https://dtai.cs.kuleuven.be/problog/).
+**JProbLog** is a [Java][java] adapter for [ProbLog][problog].
 
 
 ## Download
 
-* [library JAR file](https://sourceforge.net/projects/latitude/files/jproblog/0.2.0/jproblog-0.2.0.jar/download)
-* [The Central Repository](https://repo1.maven.org/maven2/de/tu-dresden/inf/lat/jproblog/)
+* [library JAR file][jar-file]
+* [The Central Repository][central-repository]
 * as dependency:
 
 ```xml
@@ -24,17 +24,17 @@
 
 ## Author
 
-[Julian Alfredo Mendez](https://julianmendez.github.io)
+[Julian Alfredo Mendez][author]
 
 
 ## License
 
-This software is distributed under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt).
+This software is distributed under the [Apache License Version 2.0][license].
 
 
 ## Release notes
 
-See [release notes](https://julianmendez.github.io/jproblog/RELEASE-NOTES.html).
+See [release notes][release-notes].
 
 
 ## Source code
@@ -59,7 +59,7 @@ and once offline, use:
 $ mvn --offline clean install
 ```
 
-The bundles uploaded to [Sonatype](https://oss.sonatype.org/) are created with:
+The bundles uploaded to [Sonatype][sonatype] are created with:
 
 ```
 $ mvn clean install -DperformRelease=true
@@ -83,6 +83,17 @@ where *NEW_VERSION* is the new version.
 
 ## Contact
 
-In case you need more information, please contact @julianmendez .
+In case you need more information, please contact [julianmendez][author].
+
+[author]: https://julianmendez.github.io
+[license]: https://www.apache.org/licenses/LICENSE-2.0.txt
+[maven-central]: https://search.maven.org/artifact/de.tu-dresden.inf.lat.jproblog/jproblog
+[build-status]: https://github.com/julianmendez/jproblog/actions
+[central-repository]: https://repo1.maven.org/maven2/de/tu-dresden/inf/lat/jproblog/
+[jar-file]: https://sourceforge.net/projects/latitude/files/jproblog/0.2.0/jproblog-0.2.0.jar/download
+[release-notes]: https://julianmendez.github.io/jproblog/RELEASE-NOTES.html
+[sonatype]: https://oss.sonatype.org
+[java]: https://www.oracle.com/java/technologies/
+[problog]: https://dtai.cs.kuleuven.be/problog/
 
 
