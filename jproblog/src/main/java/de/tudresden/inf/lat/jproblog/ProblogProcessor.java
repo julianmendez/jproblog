@@ -26,11 +26,16 @@ import java.util.zip.ZipEntry;
  */
 public class ProblogProcessor implements Function<String, String> {
 
+	public static final String PROBLOG_VERSION = "2.2.4";
+
+	static final String PROBLOG_URI = "https://github.com/ML-KULeuven/problog/archive/refs" +
+			"/tags/v"+ PROBLOG_VERSION + ".zip";
+	static final String PROBLOG_ZIP_FILE_NAME = "problog-" + PROBLOG_VERSION + ".zip";
+	public static final URI DEFAULT_PROBLOG_DOWNLOAD_URI = URI
+			.create(PROBLOG_URI);
+
 	static final char SPACE_CHAR = ' ';
 	static final char NEW_LINE_CHAR = '\n';
-	public static final URI DEFAULT_PROBLOG_DOWNLOAD_URI = URI
-			.create("https://github.com/ML-KULeuven/problog/archive/refs/heads/master.zip");
-
 	static final String FILE_SEPARATOR = System.getProperty("file.separator");
 
 	static final String USER_HOME_DIRECTORY = System.getProperty("user.home");
@@ -47,7 +52,7 @@ public class ProblogProcessor implements Function<String, String> {
 	static final String DEFAULT_PROBLOG_INSTALLATION_DIRECTORY = JPROBLOG_WORKING_DIRECTORY;
 
 	static final String DEFAULT_PROBLOG_ZIP_FILE = JPROBLOG_WORKING_DIRECTORY + FILE_SEPARATOR
-			+ "problog-master.zip";
+			+ PROBLOG_ZIP_FILE_NAME;
 
 	static final String PROBLOG_CLI = "problog-cli.py";
 	static final String PROBLOG_INSTALL_COMMAND = "install";

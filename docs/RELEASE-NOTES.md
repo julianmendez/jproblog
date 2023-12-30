@@ -7,7 +7,7 @@
   - build: mvn clean install
   - release: jproblog/target/jproblog-0.2.0.jar
   - features:
-    - it downloads ProbLog 2.1
+    - it downloads ProbLog 2.2.4
   - deprecated:
     - it does not longer support Python 2
     - it does not longer use Jython
